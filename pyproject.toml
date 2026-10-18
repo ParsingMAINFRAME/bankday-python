@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bankday"
+version = "1.0.0"
+description = "Business days, bank holidays and settlement dates for ACH, TARGET2, Bacs, Payments Canada, 28 exchanges and 247 countries."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+keywords = ["business days", "bank holidays", "ach", "fedwire", "target2", "nyse", "settlement", "fx", "value date"]
+classifiers = ["License :: OSI Approved :: MIT License", "Programming Language :: Python :: 3", "Topic :: Office/Business :: Financial"]
+
+[project.urls]
+Documentation = "https://bankday.dev/docs"
+Source = "https://github.com/ParsingMAINFRAME/bankday-python"
+Issues = "https://github.com/ParsingMAINFRAME/bankday-python/issues"
+
+[tool.setuptools]
+packages = ["bankday"]
