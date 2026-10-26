@@ -72,6 +72,11 @@ class Bankday:
     def fx_spot(self, pair: str, trade_date: str): return self.request("/v1/fx/spot", pair=pair, trade_date=trade_date)
     def ach_settlement(self, submitted_at: Optional[str] = None, type: Optional[str] = None, amount: Optional[float] = None):  # noqa: A002
         return self.request("/v1/ach/settlement", submitted_at=submitted_at, type=type, amount=amount)
+    def payroll_schedule(self, calendar: Calendar, frequency: str, year: Optional[int] = None, anchor: Optional[str] = None,
+                         days: Optional[str] = None, day: Optional[str] = None, adjust: Optional[str] = None, lead_days: Optional[int] = None,
+                         start: Optional[str] = None, end: Optional[str] = None):
+        return self.request("/v1/payroll/schedule", calendar=_cal(calendar), frequency=frequency, year=year, anchor=anchor,
+                            days=days, day=day, adjust=adjust, lead_days=lead_days, start=start, end=end)
     def calendars(self, type: Optional[str] = None, q: Optional[str] = None): return self.request("/v1/calendars", type=type, q=q)  # noqa: A002
     def calendar(self, calendar_id: str): return self.request(f"/v1/calendars/{urllib.parse.quote(calendar_id)}")
     def account(self): return self.request("/v1/account")
