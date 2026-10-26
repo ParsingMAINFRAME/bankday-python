@@ -1,0 +1,24 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "0 7 * * 1"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.10", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      # Runs against Bankday's keyless demo endpoints, so no secret is needed
+      - run: python test_live.py
+        env:
+          BANKDAY_API_KEY: demo
+          BANKDAY_BASE_URL: https://bankday.dev/demo

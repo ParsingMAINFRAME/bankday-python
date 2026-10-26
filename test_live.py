@@ -13,4 +13,6 @@ try:
     raise AssertionError("expected 404")
 except BankdayError as e:
     assert e.status == 404 and e.code == "unknown_calendar"
+pay = bd.payroll_schedule("us-fed", "semimonthly", year=2027)
+assert next(p for p in pay["pay_dates"] if p["scheduled"] == "2027-02-15")["pay_date"] == "2027-02-12"
 print("bankday-python: all checks passed")

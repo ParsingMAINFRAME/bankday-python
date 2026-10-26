@@ -15,7 +15,7 @@ import urllib.parse
 import urllib.request
 from typing import Any, Dict, Iterable, Optional, Union
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 __all__ = ["Bankday", "BankdayError"]
 
 DEFAULT_BASE_URL = "https://bankday.dev"

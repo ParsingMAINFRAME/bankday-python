@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "bankday"
-version = "1.0.0"
+version = "1.1.0"
 description = "Business days, bank holidays and settlement dates for ACH, TARGET2, Bacs, Payments Canada, 28 exchanges and 247 countries."
 readme = "README.md"
 requires-python = ">=3.8"
